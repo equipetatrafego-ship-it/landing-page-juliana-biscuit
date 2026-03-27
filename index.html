@@ -1,0 +1,1671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aprenda a fazer peças de Biscuit e fature de R$500 a R$2.000 por mês vendendo online. Método completo do zero ao seu primeiro pedido." />
+  <title>Biscuit Lucrativo — Do Zero ao Lucro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       VARIÁVEIS & RESET
+    ============================================================ */
+    :root {
+      --rosa-principal: #E8336D;
+      --rosa-claro: #FDE8EF;
+      --rosa-medio: #F7A8C0;
+      --vermelho-acao: #C0192C;
+      --branco: #FFFFFF;
+      --cinza-claro: #F9F4F6;
+      --texto-escuro: #2B1016;
+      --dourado: #C9933A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: var(--texto-escuro);
+      background: var(--branco);
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ============================================================
+       UTILITÁRIOS
+    ============================================================ */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section-pad { padding: 60px 20px; }
+    .text-center { text-align: center; }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--rosa-principal);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.6rem; }
+    h3 { font-size: 1.2rem; }
+
+    /* ============================================================
+       BOTÃO CTA — VERDE
+    ============================================================ */
+    .btn-cta {
+      background: linear-gradient(135deg, #2ecc71, #1aab56);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 18px 32px;
+      border-radius: 50px;
+      border: none;
+      width: 100%;
+      max-width: 420px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(26, 171, 86, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.3;
+    }
+    .btn-cta:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(26, 171, 86, 0.55); }
+    .btn-cta:active { transform: translateY(0); }
+
+    .btn-cta-white {
+      background: linear-gradient(135deg, #2ecc71, #1aab56);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 18px 32px;
+      border-radius: 50px;
+      border: none;
+      width: 100%;
+      max-width: 420px;
+      cursor: pointer;
+      box-shadow: 0 8px 24px rgba(26, 171, 86, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: block;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .btn-cta-white:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(26, 171, 86, 0.55); }
+
+    /* ============================================================
+       ANIMAÇÃO ON SCROLL
+    ============================================================ */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .animate-on-scroll.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============================================================
+       1. BARRA ANUNCIANTE
+    ============================================================ */
+    .barra-anunciante {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      background: var(--rosa-principal);
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      text-align: center;
+      padding: 5px 12px;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @media (max-width: 400px) {
+      .barra-anunciante { font-size: 10px; gap: 6px; }
+    }
+    .countdown-badge {
+      background: rgba(0,0,0,0.28);
+      border-radius: 4px;
+      padding: 1px 7px;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      font-family: 'Poppins', monospace;
+      flex-shrink: 0;
+    }
+
+    body { padding-top: 32px; }
+
+    /* ============================================================
+       2. HERO
+    ============================================================ */
+    .hero {
+      background: radial-gradient(ellipse at 80% 20%, rgba(247,168,192,0.25) 0%, transparent 60%),
+                  linear-gradient(135deg, #FDE8EF 0%, #FFFFFF 60%);
+      position: relative;
+      overflow: hidden;
+      padding: 40px 20px 50px;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(232,51,109,0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(232,51,109,0.12);
+      border: 1px solid rgba(232,51,109,0.3);
+      color: var(--rosa-principal);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 {
+      color: var(--texto-escuro);
+      margin-bottom: 14px;
+      font-size: 1.9rem;
+      text-align: center;
+    }
+    .hero h1 span { color: var(--rosa-principal); }
+
+    .hero-subtitle {
+      color: #5a2a35;
+      font-size: 0.95rem;
+      margin-bottom: 0;
+      max-width: 520px;
+    }
+
+    /* ---- HERO IMAGE (mobile: full-bleed com degradê) ---- */
+    .hero-image-wrap {
+      position: relative;
+      margin: 20px -20px 20px;
+      overflow: hidden;
+      order: 3; /* entre copy-top e copy-bottom no mobile */
+    }
+    .hero-image-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0;
+      /* leve boost de contraste e saturação para as peças ficarem mais vibrantes */
+      filter: contrast(1.06) saturate(1.12) brightness(1.02);
+    }
+    /* degradê apenas na base — fino, para fundir suavemente com o fundo */
+    .hero-image-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 22%;
+      background: linear-gradient(to top, #FFFFFF 0%, rgba(255,255,255,0) 100%);
+      pointer-events: none;
+    }
+    /* sem gradiente lateral — peças precisam aparecer limpo */
+    .hero-image-wrap::before { display: none; }
+
+    .hero-copy-top { order: 1; text-align: center; }
+    .hero-copy-bottom { order: 4; }
+
+    /* ---- BLOCO DE COPY DO HERO (após foto + botão) ---- */
+    .hero-proof-block {
+      background: linear-gradient(135deg, rgba(253,232,239,0.7) 0%, rgba(255,255,255,0.9) 100%);
+      border-left: 4px solid var(--rosa-principal);
+      border-radius: 0 16px 16px 0;
+      padding: 18px 20px 14px;
+      margin: 18px 0 8px;
+    }
+    .hero-proof-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--rosa-principal);
+      margin-bottom: 6px;
+    }
+    .hero-proof-headline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--texto-escuro);
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .hero-proof-sub {
+      font-size: 0.85rem;
+      color: #6b3040;
+      line-height: 1.55;
+      margin-bottom: 14px;
+    }
+    .hero-features {
+      list-style: none;
+      margin: 0;
+    }
+    .hero-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 5px 0;
+      font-size: 0.88rem;
+      color: var(--texto-escuro);
+      font-weight: 500;
+      border-bottom: 1px solid rgba(232,51,109,0.08);
+    }
+    .hero-features li:last-child { border-bottom: none; }
+    .hero-features li .feat-icon {
+      width: 22px;
+      height: 22px;
+      background: #1aab56;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.7rem;
+    }
+
+    /* hero-new-copy mantido para retrocompatibilidade */
+    .hero-new-copy { display: none; }
+    .hero-bullets { list-style: none; margin-bottom: 28px; }
+
+    .hero-anchor {
+      display: block;
+      text-align: center;
+      margin-top: 14px;
+      font-size: 0.82rem;
+      color: var(--rosa-principal);
+      font-weight: 500;
+    }
+
+    .hero-price-badge {
+      position: absolute;
+      bottom: 20px;
+      right: 16px;
+      z-index: 2;
+      background: linear-gradient(135deg, var(--dourado), #e0a83a);
+      color: #fff;
+      border-radius: 14px;
+      padding: 10px 16px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(201,147,58,0.45);
+      animation: pulse-badge 2s ease-in-out infinite;
+    }
+    .hero-price-badge .price { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 800; display: block; }
+    .hero-price-badge .price-desc { font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    @keyframes pulse-badge {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    /* ============================================================
+       3. BARRA DE CONFIANÇA
+    ============================================================ */
+    .confianca {
+      background: var(--texto-escuro);
+      padding: 40px 20px;
+    }
+    .confianca-grid {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      align-items: center;
+    }
+    .confianca-item {
+      text-align: center;
+      color: #fff;
+    }
+    .confianca-item .icon { font-size: 2rem; margin-bottom: 6px; display: block; }
+    .confianca-item .number { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 800; color: var(--rosa-medio); display: block; }
+    .confianca-item .label { font-size: 0.82rem; color: rgba(255,255,255,0.75); line-height: 1.4; }
+
+    /* ============================================================
+       4. PROBLEMA
+    ============================================================ */
+    .problema {
+      background: var(--branco);
+      padding: 60px 20px;
+    }
+    .problema h2 { color: var(--texto-escuro); margin-bottom: 32px; }
+    .problema-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .problema-card {
+      background: var(--branco);
+      border: 1.5px solid var(--rosa-medio);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-align: left;
+    }
+    .prob-illus { flex-shrink: 0; width: 90px; height: 90px; }
+    .prob-photo {
+      flex-shrink: 0;
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--rosa-medio);
+      box-shadow: 0 4px 16px rgba(232,51,109,0.18);
+    }
+    .problema-card h3 { font-family: 'Poppins', sans-serif; font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; color: var(--texto-escuro); }
+    .problema-card p { font-size: 0.85rem; color: #6b3040; line-height: 1.5; }
+
+    /* ---- WHATSAPP QUOTE ---- */
+    .problema-quote-wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      background: #dfe5ea url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='10' cy='10' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='30' cy='10' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='50' cy='10' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='10' cy='30' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='30' cy='30' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='50' cy='30' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='10' cy='50' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='30' cy='50' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3Ccircle cx='50' cy='50' r='1.2' fill='rgba(0,0,0,0.04)'/%3E%3C/svg%3E");
+      border-radius: 16px;
+      padding: 20px 16px;
+    }
+    .wpp-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .wpp-avatar {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--rosa-medio), var(--rosa-principal));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: #fff; font-weight: 700;
+      flex-shrink: 0;
+    }
+    .wpp-contact-name { font-size: 0.82rem; font-weight: 700; color: #1a3c34; }
+    .wpp-contact-sub { font-size: 0.7rem; color: #667781; }
+    .wpp-bubble {
+      background: #fff;
+      border-radius: 0 10px 10px 10px;
+      padding: 12px 14px 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.12);
+      position: relative;
+      display: inline-block;
+      max-width: 92%;
+      text-align: left;
+    }
+    .wpp-bubble::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -7px;
+      border-top: 7px solid #fff;
+      border-left: 7px solid transparent;
+    }
+    .wpp-bubble p {
+      font-size: 0.9rem;
+      color: #111;
+      line-height: 1.55;
+      margin: 0;
+    }
+    .wpp-meta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      margin-top: 4px;
+    }
+    .wpp-time { font-size: 0.66rem; color: #667781; }
+    .wpp-check { font-size: 0.75rem; color: #53bdeb; }
+
+    /* ============================================================
+       5. SOLUÇÃO
+    ============================================================ */
+    .solucao {
+      background: var(--rosa-claro);
+      padding: 60px 20px;
+    }
+    .solucao h2 { color: var(--texto-escuro); margin-bottom: 28px; }
+    .solucao-list {
+      list-style: none;
+      max-width: 680px;
+      margin: 0 auto 32px;
+    }
+    .solucao-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(232,51,109,0.12);
+      font-size: 0.98rem;
+      color: var(--texto-escuro);
+    }
+    .solucao-list li:last-child { border-bottom: none; }
+    .solucao-list li .ico { font-size: 1.2rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ============================================================
+       6. MÓDULOS
+    ============================================================ */
+    .modulos {
+      background: var(--branco);
+      padding: 60px 20px;
+    }
+    .modulos-header { margin-bottom: 36px; }
+    .modulos-header p { color: #6b3040; margin-top: 12px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .modulos-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 1100px;
+      margin: 0 auto 36px;
+    }
+    .modulo-card {
+      background: var(--cinza-claro);
+      border: 1px solid rgba(232,51,109,0.12);
+      border-radius: 16px;
+      padding: 20px;
+      position: relative;
+    }
+    .modulo-card:hover { border-color: var(--rosa-principal); box-shadow: 0 4px 20px rgba(232,51,109,0.12); transition: all 0.3s; }
+    .modulo-num {
+      background: var(--rosa-principal);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 10px;
+    }
+    .modulo-icon { font-size: 1.6rem; margin-bottom: 6px; }
+    .modulo-card h3 { font-family: 'Poppins', sans-serif; font-size: 0.92rem; font-weight: 700; color: var(--texto-escuro); margin-bottom: 8px; }
+    .modulo-card ul { list-style: none; }
+    .modulo-card ul li { font-size: 0.8rem; color: #6b3040; padding: 2px 0; }
+    .modulo-card ul li::before { content: '• '; color: var(--rosa-principal); }
+
+    /* ============================================================
+       7. CARROSSEL VOCÊ VAI APRENDER
+    ============================================================ */
+    .carousel-section {
+      background: var(--rosa-claro);
+      padding: 60px 0;
+    }
+    .carousel-section .section-head { padding: 0 20px; margin-bottom: 28px; }
+    .carousel-section .section-head p { color: #6b3040; max-width: 500px; margin: 8px auto 0; }
+
+    .carousel-wrap {
+      position: relative;
+      overflow: hidden;
+    }
+    .carousel-track {
+      display: flex;
+      gap: 16px;
+      padding: 8px 20px 20px;
+      transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+    }
+    .carousel-card {
+      flex-shrink: 0;
+      width: calc(83vw - 20px);
+      max-width: 300px;
+      background: #fff;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(232,51,109,0.12);
+    }
+    .carousel-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .carousel-card-label {
+      padding: 12px 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--texto-escuro);
+    }
+
+    .img-placeholder {
+      background: linear-gradient(135deg, var(--rosa-claro), var(--rosa-medio));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--rosa-principal);
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-align: center;
+      padding: 10px;
+    }
+    .carousel-card .img-placeholder { height: 220px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      padding-bottom: 4px;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(232,51,109,0.25);
+      cursor: pointer;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .dot.active { background: var(--rosa-principal); transform: scale(1.3); }
+
+    .carousel-arrows {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .carousel-arrow {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 2px solid var(--rosa-principal);
+      background: #fff;
+      color: var(--rosa-principal);
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .carousel-arrow:hover { background: var(--rosa-principal); color: #fff; }
+
+    /* ============================================================
+       8. ÁREA DE MEMBROS
+    ============================================================ */
+    .area-membros {
+      background: var(--branco);
+      padding: 60px 20px;
+    }
+    .area-membros-header { margin-bottom: 32px; }
+    .area-membros-header p { color: #6b3040; margin-top: 12px; max-width: 540px; margin-left: auto; margin-right: auto; }
+    .membros-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      max-width: 900px;
+      margin: 0 auto 32px;
+    }
+    .membro-card {
+      border: 2px solid var(--rosa-principal);
+      border-radius: 20px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .membro-card img { width: 100%; height: 160px; object-fit: cover; }
+    .membro-card .img-placeholder { height: 160px; }
+    .membro-card .caption {
+      background: var(--rosa-claro);
+      padding: 10px 8px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--texto-escuro);
+    }
+
+    /* ============================================================
+       9. PROVAS SOCIAIS
+    ============================================================ */
+    .provas {
+      background: var(--rosa-claro);
+      padding: 60px 0;
+    }
+    .provas .section-head { padding: 0 20px; margin-bottom: 28px; }
+    .provas .section-head p { color: #6b3040; max-width: 480px; margin: 8px auto 0; }
+
+    .provas-carousel .carousel-card img { height: 280px; object-fit: cover; }
+    .provas-carousel .carousel-card .img-placeholder { height: 280px; }
+
+    /* ============================================================
+       10. ESPECIALISTA
+    ============================================================ */
+    .especialista {
+      background: linear-gradient(180deg, var(--branco) 60%, var(--rosa-claro) 100%);
+      padding: 60px 20px;
+    }
+    .especialista-inner { max-width: 1100px; margin: 0 auto; }
+    .especialista-img-wrap {
+      position: relative;
+      margin-bottom: 32px;
+    }
+    .especialista-img-wrap img {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      border-radius: 16px;
+      box-shadow: -8px 8px 32px rgba(232,51,109,0.2);
+    }
+    .especialista-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 40%;
+      background: linear-gradient(to top, var(--rosa-claro) 0%, transparent 100%);
+      border-radius: 0 0 16px 16px;
+      pointer-events: none;
+    }
+    .especialista-copy .eyebrow { margin-bottom: 14px; }
+    .especialista-copy h2 { color: var(--texto-escuro); margin-bottom: 12px; }
+    .especialista-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--rosa-claro);
+      border: 1px solid var(--rosa-medio);
+      color: var(--rosa-principal);
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .especialista-copy p { color: #5a2a35; margin-bottom: 20px; font-size: 0.95rem; }
+    .conquistas { list-style: none; margin-bottom: 28px; }
+    .conquistas li { display: flex; align-items: flex-start; gap: 10px; padding: 6px 0; font-size: 0.95rem; color: var(--texto-escuro); font-weight: 500; }
+    .conquistas li span { font-size: 1.1rem; }
+
+    /* ============================================================
+       11. ENTREGÁVEIS
+    ============================================================ */
+    .entregaveis {
+      background: var(--rosa-claro);
+      padding: 60px 20px;
+    }
+    .entregaveis-header { margin-bottom: 32px; }
+    .entregaveis-header p { color: #6b3040; margin-top: 12px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .entregaveis-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      max-width: 760px;
+      margin: 0 auto 36px;
+    }
+    .entregavel-card {
+      background: var(--branco);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      box-shadow: 0 4px 16px rgba(232,51,109,0.08);
+    }
+    .entregavel-icon { font-size: 1.6rem; flex-shrink: 0; }
+    .entregavel-card h3 { font-family: 'Poppins', sans-serif; font-size: 0.9rem; font-weight: 700; color: var(--texto-escuro); margin-bottom: 4px; }
+    .entregavel-card p { font-size: 0.82rem; color: #6b3040; margin-bottom: 6px; }
+    .entregavel-valor { font-size: 0.78rem; font-weight: 700; color: var(--dourado); text-transform: uppercase; letter-spacing: 0.5px; }
+    .entregavel-card.bonus { border-left: 3px solid var(--dourado); }
+    .entregavel-card.principal { border-left: 3px solid var(--rosa-principal); }
+
+    .preco-box {
+      background: var(--branco);
+      border-radius: 20px;
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(232,51,109,0.12);
+      border: 2px solid var(--rosa-medio);
+    }
+    .preco-de { font-size: 0.82rem; color: #bbb; text-decoration: line-through; margin-bottom: 6px; }
+    .preco-vezes-label { font-size: 1rem; color: #6b3040; font-weight: 600; margin-bottom: 0; }
+    .preco-por { font-family: 'Playfair Display', serif; font-size: 3.6rem; font-weight: 800; color: #1aab56; display: block; line-height: 1; margin-bottom: 2px; }
+    .preco-avista { font-size: 0.82rem; color: #999; margin-bottom: 22px; }
+    .preco-parcelamento { font-size: 0.85rem; color: #6b3040; margin-bottom: 24px; }
+    .preco-garantia { font-size: 0.78rem; color: #999; margin-top: 12px; }
+
+    /* ============================================================
+       12. FAQ
+    ============================================================ */
+    .faq {
+      background: var(--branco);
+      padding: 60px 20px;
+    }
+    .faq h2 { margin-bottom: 32px; color: var(--texto-escuro); }
+    .faq-list { max-width: 720px; margin: 0 auto 36px; }
+    .faq-item {
+      border-bottom: 1px solid rgba(232,51,109,0.15);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      text-align: left;
+      padding: 18px 0;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--texto-escuro);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .faq-question::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--rosa-principal);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+      font-weight: 400;
+    }
+    .faq-item.open .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; }
+    .faq-answer p {
+      font-size: 0.9rem;
+      color: #6b3040;
+      padding-bottom: 18px;
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       13. CTA FINAL
+    ============================================================ */
+    .cta-final {
+      background: linear-gradient(135deg, var(--rosa-principal) 0%, var(--vermelho-acao) 100%);
+      padding: 70px 20px;
+      text-align: center;
+    }
+    .cta-final h2 { color: #fff; margin-bottom: 16px; }
+    .cta-final p { color: rgba(255,255,255,0.9); max-width: 500px; margin: 0 auto 28px; }
+    .cta-final-bullets {
+      list-style: none;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      margin: 0 auto 28px;
+      text-align: left;
+    }
+    .cta-final-bullets li { color: #fff; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+    .preco-final { font-family: 'Poppins', sans-serif; font-size: 1.1rem; font-weight: 700; color: rgba(255,255,255,0.9); margin-bottom: 24px; }
+    .preco-final strong { font-family: 'Playfair Display', serif; font-size: 2rem; color: #fff; }
+
+    /* ============================================================
+       14. RODAPÉ
+    ============================================================ */
+    footer {
+      background: var(--texto-escuro);
+      color: rgba(255,255,255,0.65);
+      padding: 40px 20px 28px;
+      text-align: center;
+    }
+    .footer-logo { color: #fff; font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 16px; }
+    .footer-links { margin: 14px 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.5); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--rosa-medio); }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,0.1); margin: 16px auto; max-width: 500px; }
+    .footer-copy { font-size: 0.78rem; }
+    .footer-disclaimer { font-size: 0.72rem; color: rgba(255,255,255,0.35); margin-top: 12px; max-width: 640px; margin-left: auto; margin-right: auto; }
+
+    /* ============================================================
+       WHATSAPP FLUTUANTE
+    ============================================================ */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 20px;
+      z-index: 9999;
+      background: #25D366;
+      border-radius: 50%;
+      width: 58px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+      animation: pulse-wpp 2s infinite;
+      transition: transform 0.2s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    @keyframes pulse-wpp {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5); }
+      50% { box-shadow: 0 4px 32px rgba(37, 211, 102, 0.8); }
+    }
+    .whatsapp-float svg { width: 30px; height: 30px; }
+
+    /* ============================================================
+       RESPONSIVE — DESKTOP
+    ============================================================ */
+    @media (min-width: 768px) {
+      body { padding-top: 40px; }
+      .section-pad { padding: 100px 40px; }
+      h1 { font-size: 2.8rem; }
+      h2 { font-size: 2.2rem; }
+
+      /* Hero */
+      .hero { padding: 80px 40px 60px; }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+          "top    image"
+          "bottom image";
+        gap: 0 48px;
+        align-items: start;
+      }
+      .hero-copy-top { grid-area: top; text-align: left; }
+      .hero h1 { text-align: left; }
+      .hero-copy-bottom { grid-area: bottom; align-self: start; padding-top: 16px; }
+      .hero-proof-block { border-radius: 0 16px 16px 0; }
+      .hero-image-wrap {
+        grid-area: image;
+        margin: 0;
+        order: 0;
+        overflow: visible;
+        align-self: center;
+      }
+      .hero-image-wrap::after { display: none; }
+      .hero-image-wrap::before { display: none; }
+      .hero-image-wrap img {
+        width: 100%;
+        max-height: none;
+        object-fit: initial;
+        border-radius: 16px;
+        filter: drop-shadow(0 12px 32px rgba(232,51,109,0.35));
+      }
+      .hero-subtitle { margin-bottom: 20px; }
+
+      /* Confiança */
+      .confianca-grid { flex-direction: row; justify-content: space-around; gap: 0; }
+      .confianca-item { border-right: 1px solid rgba(255,255,255,0.1); padding: 0 40px; }
+      .confianca-item:last-child { border-right: none; }
+
+      /* Problema */
+      .problema-grid { flex-direction: row; flex-wrap: wrap; }
+      .problema-card { flex: 1 1 280px; }
+
+      /* Módulos */
+      .modulos-grid { grid-template-columns: repeat(3, 1fr); }
+
+      /* Carousel */
+      .carousel-card { width: 280px; }
+
+      /* Membros */
+      .membros-grid { grid-template-columns: repeat(4, 1fr); }
+      .membro-card img { height: 200px; }
+      .membro-card .img-placeholder { height: 200px; }
+
+      /* Especialista */
+      .especialista-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      .especialista-img-wrap { margin-bottom: 0; }
+
+      /* Entregáveis */
+      .entregaveis-grid { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (min-width: 1024px) {
+      .modulos-grid { grid-template-columns: repeat(3, 1fr); }
+      .carousel-card { width: calc((100% - 80px) / 3); max-width: 340px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============================================================
+       1. BARRA ANUNCIANTE
+  ============================================================ -->
+  <div class="barra-anunciante" role="banner">
+    🔥 Vagas limitadas — Garanta agora!
+    <span class="countdown-badge" id="countdown">05:00</span>
+  </div>
+
+  <!-- ============================================================
+       2. HERO
+  ============================================================ -->
+  <section class="hero" id="inicio">
+    <div class="hero-inner">
+
+      <!-- TOPO: badge + h1 apenas -->
+      <div class="hero-copy-top">
+        <div class="hero-badge animate-on-scroll">
+          <span>✨</span> Método comprovado por centenas de alunas
+        </div>
+        <h1 class="animate-on-scroll">
+          Faça Peças de Biscuit <span>Criativas</span> e Fature de
+          <span>R$500 a R$2.000</span> por Mês <span>em Casa</span>
+        </h1>
+      </div>
+
+      <!-- IMAGEM: logo abaixo da promessa no mobile (degradê) -->
+      <div class="hero-image-wrap animate-on-scroll">
+        <img
+          src="Imagens/Especialista-HERO.jpg"
+          alt="Juliana — Especialista em Biscuit Lucrativo"
+          width="480"
+          height="560"
+          loading="eager"
+        />
+        <div class="hero-price-badge">
+          <span class="price">12x R$15,20</span>
+          <span class="price-desc">Acesso vitalício</span>
+        </div>
+      </div>
+
+      <!-- BAIXO: botão âncora → #garantir, depois copy redesenhado -->
+      <div class="hero-copy-bottom">
+        <a href="#garantir" class="btn-cta animate-on-scroll">🎯 Quero Garantir Minha Vaga</a>
+
+        <div class="hero-proof-block animate-on-scroll">
+          <div class="hero-proof-eyebrow">✨ Método comprovado</div>
+          <p class="hero-proof-headline">Já guiou +2.000 mulheres do zero à renda real</p>
+          <p class="hero-proof-sub">Sem experiência prévia, sem sair de casa e sem precisar de talento artístico.</p>
+          <ul class="hero-features">
+            <li>
+              <span class="feat-icon">✓</span>
+              Funciona mesmo que você nunca tenha tocado em biscuit
+            </li>
+            <li>
+              <span class="feat-icon">✓</span>
+              As técnicas ensinadas garantem o resultado — independente do talento
+            </li>
+            <li>
+              <span class="feat-icon">✓</span>
+              Algumas horas por dia já são suficientes para começar a vender
+            </li>
+          </ul>
+        </div>
+
+        <a href="#aprender" class="hero-anchor animate-on-scroll">↓ Veja tudo que você vai aprender</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. BARRA DE CONFIANÇA
+  ============================================================ -->
+  <section class="confianca">
+    <div class="confianca-grid">
+      <div class="confianca-item animate-on-scroll">
+        <span class="icon">🎨</span>
+        <span class="number">+2.000</span>
+        <span class="label">alunas<br>transformadas</span>
+      </div>
+      <div class="confianca-item animate-on-scroll">
+        <span class="icon">⭐</span>
+        <span class="number">4.9/5</span>
+        <span class="label">avaliação de<br>satisfação</span>
+      </div>
+      <div class="confianca-item animate-on-scroll">
+        <span class="icon">📦</span>
+        <span class="number">Método</span>
+        <span class="label">exclusivo<br>Biscuit Lucrativo</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. PROBLEMA
+  ============================================================ -->
+  <section class="problema text-center" id="problema">
+    <div class="container">
+      <h2 class="animate-on-scroll">
+        Se você se identifica com isso,<br>
+        você <strong style="color:var(--rosa-principal)">ESTÁ</strong> no lugar certo...
+      </h2>
+
+      <div class="problema-grid">
+
+        <!-- Card 1: Dependência Financeira -->
+        <div class="problema-card animate-on-scroll">
+          <img
+            class="prob-photo"
+            src="https://images.unsplash.com/photo-1541199249251-f713e6145474?w=200&h=200&fit=crop&crop=faces&q=80"
+            alt="Mulher exausta dependendo de emprego que não valoriza"
+            width="90" height="90"
+            loading="lazy"
+          />
+          <div>
+            <h3>Dependência financeira</h3>
+            <p>Dependendo de outras pessoas ou de um emprego que te esgota e não valoriza o seu tempo</p>
+          </div>
+        </div>
+
+        <!-- Card 2: Contas Apertadas -->
+        <div class="problema-card animate-on-scroll">
+          <img
+            class="prob-photo"
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=200&h=200&fit=crop&crop=faces&q=80"
+            alt="Mulher preocupada com contas no fim do mês"
+            width="90" height="90"
+            loading="lazy"
+          />
+          <div>
+            <h3>Contas apertadas</h3>
+            <p>Fim do mês chegando sem margem para realizar seus sonhos ou dar uma vida melhor à família</p>
+          </div>
+        </div>
+
+        <!-- Card 3: Potencial Inexplorado -->
+        <div class="problema-card animate-on-scroll">
+          <img
+            class="prob-photo"
+            src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=200&h=200&fit=crop&crop=faces&q=80"
+            alt="Mulher pensativa com potencial inexplorado"
+            width="90" height="90"
+            loading="lazy"
+          />
+          <div>
+            <h3>Potencial inexplorado</h3>
+            <p>Você sente que tem um talento enorme dentro de si, mas não sabe por onde começar a monetizar</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- DEPOIMENTO COM FUNDO WHATSAPP -->
+      <div class="problema-quote-wrap animate-on-scroll">
+        <div class="wpp-header">
+          <div class="wpp-avatar">J</div>
+          <div>
+            <div class="wpp-contact-name">Aluna Biscuit Lucrativo</div>
+            <div class="wpp-contact-sub">Hoje às 14h32</div>
+          </div>
+        </div>
+        <div class="wpp-bubble">
+          <p>"Minha vida mudou quando parei de achar que precisava de um emprego fixo para ter estabilidade. O biscuit me deu a liberdade que eu sempre sonhei. 🙏"</p>
+          <div class="wpp-meta">
+            <span class="wpp-time">14:32</span>
+            <span class="wpp-check">✓✓</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:32px">
+        <a href="#garantir" class="btn-cta">✅ Garantir Minha Vaga</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. SOLUÇÃO
+  ============================================================ -->
+  <section class="solucao text-center">
+    <div class="container">
+      <h2 class="animate-on-scroll">Este método foi criado para você que...</h2>
+
+      <ul class="solucao-list">
+        <li class="animate-on-scroll"><span class="ico">🎯</span> Quer aprender uma nova profissão que pode exercer de casa</li>
+        <li class="animate-on-scroll"><span class="ico">🎯</span> Nunca fez biscuit e quer começar do zero com segurança</li>
+        <li class="animate-on-scroll"><span class="ico">🎯</span> Já sabe um pouco, mas não consegue transformar em renda</li>
+        <li class="animate-on-scroll"><span class="ico">🎯</span> Quer criar presentes personalizados e vender com lucro</li>
+        <li class="animate-on-scroll"><span class="ico">🎯</span> Busca flexibilidade de horários para cuidar da família</li>
+        <li class="animate-on-scroll"><span class="ico">🎯</span> Sonha em ter seu próprio negócio sem precisar de muito investimento</li>
+      </ul>
+
+      <a href="#garantir" class="btn-cta animate-on-scroll">🎯 Quero Começar Agora</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. MÓDULOS
+  ============================================================ -->
+  <section class="modulos text-center" id="aprender">
+    <div class="container">
+      <div class="modulos-header animate-on-scroll">
+        <span class="eyebrow">CONTEÚDO COMPLETO</span>
+        <h2>Tudo o que você vai dominar,<br>do zero ao seu primeiro pedido</h2>
+        <p>Módulos organizados para que você avance no seu ritmo — sem pressão, sem pular etapas.</p>
+      </div>
+
+      <div class="modulos-grid">
+        <div class="modulo-card animate-on-scroll">
+          <span class="modulo-num">Módulo 1</span>
+          <div class="modulo-icon">🧪</div>
+          <h3>A Massa Perfeita</h3>
+          <ul>
+            <li>Receita exclusiva da massa de biscuit</li>
+            <li>Consistência, cor e textura ideais</li>
+            <li>Erros mais comuns e como evitar</li>
+          </ul>
+        </div>
+        <div class="modulo-card animate-on-scroll">
+          <span class="modulo-num">Módulo 2</span>
+          <div class="modulo-icon">🎨</div>
+          <h3>Técnicas de Modelagem</h3>
+          <ul>
+            <li>Modelagem básica e intermediária</li>
+            <li>Peças decorativas e personagens</li>
+            <li>Acabamentos profissionais</li>
+          </ul>
+        </div>
+        <div class="modulo-card animate-on-scroll">
+          <span class="modulo-num">Módulo 3</span>
+          <div class="modulo-icon">🌸</div>
+          <h3>Peças que Vendem</h3>
+          <ul>
+            <li>O que o mercado mais compra</li>
+            <li>Tendências e datas comemorativas</li>
+            <li>Portfólio de produtos lucrativos</li>
+          </ul>
+        </div>
+        <div class="modulo-card animate-on-scroll">
+          <span class="modulo-num">Módulo 4</span>
+          <div class="modulo-icon">📱</div>
+          <h3>Fotografia com Celular</h3>
+          <ul>
+            <li>Como fotografar suas peças</li>
+            <li>Iluminação natural e backdrops</li>
+            <li>Edição rápida para redes sociais</li>
+          </ul>
+        </div>
+        <div class="modulo-card animate-on-scroll">
+          <span class="modulo-num">Módulo 5</span>
+          <div class="modulo-icon">💰</div>
+          <h3>Precificação Inteligente</h3>
+          <ul>
+            <li>Como calcular seu custo real</li>
+            <li>Margem de lucro sem perder vendas</li>
+            <li>Tabela de preços pronta para usar</li>
+          </ul>
+        </div>
+        <div class="modulo-card animate-on-scroll">
+          <span class="modulo-num">Módulo 6</span>
+          <div class="modulo-icon">🛒</div>
+          <h3>Venda Online Sem Segredos</h3>
+          <ul>
+            <li>WhatsApp Business para artesãs</li>
+            <li>Instagram e reels que vendem</li>
+            <li>Marketplace e primeiros clientes</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="#garantir" class="btn-cta animate-on-scroll">✅ Garantir Minha Vaga</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       7. CARROSSEL VOCÊ VAI APRENDER
+  ============================================================ -->
+  <section class="carousel-section" id="voce-vai-aprender">
+    <div class="section-head text-center animate-on-scroll">
+      <span class="eyebrow">DENTRO DO CURSO</span>
+      <h2>Veja por dentro o que você vai aprender</h2>
+      <p>Fotos reais do conteúdo — sem enrolação, direto ao ponto.</p>
+    </div>
+
+    <div class="carousel-wrap" id="carousel-aprender">
+      <div class="carousel-track">
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO-05-TOPO-DE-BOLO-JARDIM.png" alt="Topo de Bolo Jardim" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🌸 Topo de Bolo Jardim</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO-06-ANIMAIS-SAFARI.png" alt="Animais Safari" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🦁 Animais Safari</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO=07-TOPO-DE-BOLO-SAFARI.png" alt="Topo de Bolo Safari" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🦒 Topo de Bolo Safari</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO-08-TOPO-DE-BOLO-MORANGUINHO.png" alt="Topo de Bolo Moranguinho" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🍓 Topo de Bolo Moranguinho</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO-09-PORTA-GUARDANAPOS.png" alt="Porta Guardanapos" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🎀 Porta Guardanapos</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO-10-LEMBRANCINHAS.png" alt="Lembrancinhas" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🎁 Lembrancinhas</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO-11-Pote-Coelho-Grande.png" alt="Pote Coelho Grande" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🐰 Pote Coelho Grande</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/MODULO-12-BRANCA-DE-NEVE.png" alt="Branca de Neve" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🍎 Branca de Neve</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/Vocë-vai-aprender-potesdecorados.PNG" alt="Potes Decorados" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🏺 Potes Decorados</div>
+        </div>
+
+        <div class="carousel-card">
+          <img src="Imagens/Vocë-vai-aprender-Ursinho.jpg" alt="Ursinho em Biscuit" width="300" height="220" loading="lazy" />
+          <div class="carousel-card-label">🐻 Ursinho</div>
+        </div>
+
+      </div>
+      <div class="carousel-dots" id="dots-aprender"></div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow prev" aria-label="Anterior">&#8592;</button>
+        <button class="carousel-arrow next" aria-label="Próximo">&#8594;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Área de Membros removida conforme solicitado -->
+
+  <!-- ============================================================
+       9. PROVAS SOCIAIS
+  ============================================================ -->
+  <section class="provas" id="depoimentos">
+    <div class="section-head text-center animate-on-scroll">
+      <span class="eyebrow">RESULTADOS REAIS</span>
+      <h2>Veja o que nossas alunas<br>estão conquistando</h2>
+      <p>Resultados reais de mulheres que decidiram começar.</p>
+    </div>
+
+    <div class="carousel-wrap provas-carousel" id="carousel-provas">
+      <div class="carousel-track">
+
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-01.PNG" alt="Depoimento 1" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-02.PNG" alt="Depoimento 2" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-03.PNG" alt="Depoimento 3" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-04.PNG" alt="Depoimento 4" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-05.PNG" alt="Depoimento 5" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-06.PNG" alt="Depoimento 6" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-07.PNG" alt="Depoimento 7" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-08.PNG" alt="Depoimento 8" width="300" height="280" loading="lazy" />
+        </div>
+        <div class="carousel-card">
+          <img src="Imagens/Depoimento-09.PNG" alt="Depoimento 9" width="300" height="280" loading="lazy" />
+        </div>
+
+      </div>
+      <div class="carousel-dots" id="dots-provas"></div>
+      <div class="carousel-arrows">
+        <button class="carousel-arrow prev" aria-label="Anterior">&#8592;</button>
+        <button class="carousel-arrow next" aria-label="Próximo">&#8594;</button>
+      </div>
+    </div>
+
+    <div style="margin-top:28px;text-align:center;padding:0 20px;">
+      <a href="#garantir" class="btn-cta" style="max-width:400px;">➡ Quero Ter Resultados como Esses</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       10. ESPECIALISTA
+  ============================================================ -->
+  <section class="especialista" id="especialista">
+    <div class="especialista-inner">
+      <div class="especialista-img-wrap animate-on-scroll">
+        <img
+          src="Imagens/Especialista.jpg"
+          alt="Juliana — Especialista Biscuit Lucrativo"
+          width="480"
+          height="560"
+          loading="lazy"
+        />
+      </div>
+      <div class="especialista-copy animate-on-scroll">
+        <span class="eyebrow">QUEM VAI TE ENSINAR</span>
+        <h2>Juliana</h2>
+        <div class="especialista-badge">✨ Artesã • Empreendedora • Professora</div>
+        <p>
+          Juliana transformou sua paixão pelo biscuit em um negócio lucrativo, construído
+          do zero — sem investimento alto, sem loja física e trabalhando no próprio ritmo.
+          Com anos de experiência e um método próprio desenvolvido na prática, ela já ajudou
+          mais de 2.000 mulheres a criarem sua renda extra através do artesanato.
+        </p>
+        <p>
+          Hoje, sua missão é clara: mostrar que qualquer mulher pode aprender, criar e
+          vender suas peças — independente de experiência ou situação financeira.
+        </p>
+        <ul class="conquistas">
+          <li><span>🏆</span> +2.000 alunas formadas no Brasil e nos EUA</li>
+          <li><span>🏆</span> Método exclusivo desenvolvido ao longo de anos</li>
+          <li><span>🏆</span> Referência no mercado de biscuit criativo</li>
+        </ul>
+        <a href="#garantir" class="btn-cta">💬 Quero Aprender com Ela</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       11. ENTREGÁVEIS
+  ============================================================ -->
+  <section class="entregaveis text-center" id="garantir">
+    <div class="container">
+      <div class="entregaveis-header animate-on-scroll">
+        <span class="eyebrow">SUA JORNADA COMPLETA</span>
+        <h2>Tudo que você recebe<br>ao garantir sua vaga hoje</h2>
+        <p>Acesso vitalício a todo o conteúdo + bônus exclusivos</p>
+      </div>
+
+      <div class="entregaveis-grid">
+        <div class="entregavel-card principal animate-on-scroll">
+          <div class="entregavel-icon">✅</div>
+          <div>
+            <div style="font-size:0.7rem;font-weight:700;color:var(--rosa-principal);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">CURSO PRINCIPAL</div>
+            <h3>Biscuit Lucrativo — Do Zero ao Lucro</h3>
+            <p>Aprenda a fazer sua própria massa de biscuit, modelar peças criativas e transformar em renda. Acesso vitalício.</p>
+            <div class="entregavel-valor">Valor: R$ 297</div>
+          </div>
+        </div>
+
+        <div class="entregavel-card bonus animate-on-scroll">
+          <div class="entregavel-icon">🎁</div>
+          <div>
+            <div style="font-size:0.7rem;font-weight:700;color:var(--dourado);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">BÔNUS EXCLUSIVO</div>
+            <h3>Aula de Precificação para Artesãs</h3>
+            <p>Aprenda na prática como calcular o preço certo de cada peça para vender com lucro real e sem medo.</p>
+            <div class="entregavel-valor">Valor: R$ 47</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="preco-box animate-on-scroll">
+        <div class="preco-de">De R$ 411</div>
+        <div class="preco-vezes-label">12x de</div>
+        <span class="preco-por">R$ 15,20</span>
+        <div class="preco-avista">ou R$ 147,00 à vista</div>
+        <a href="https://pay.hotmart.com/J104716342N?off=neub9a1k&bid=1774566116708" class="btn-cta">✅ Garantir Minha Vaga Agora</a>
+        <div class="preco-garantia">🔒 Compra 100% segura • Plataforma criptografada</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       12. FAQ
+  ============================================================ -->
+  <section class="faq text-center" id="faq">
+    <div class="container">
+      <h2 class="animate-on-scroll">Ainda tem dúvidas?<br>Veja as respostas</h2>
+
+      <div class="faq-list">
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">Preciso ter experiência com artesanato para começar?</button>
+          <div class="faq-answer">
+            <p>Não! O método foi criado do zero. Você vai aprender desde a preparação da massa até a venda das suas peças, passo a passo, sem pular etapas.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">Como funciona o acesso ao curso?</button>
+          <div class="faq-answer">
+            <p>Após a confirmação do pagamento, você recebe o login por e-mail e acessa tudo pela plataforma, pelo celular ou computador, de qualquer lugar.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">Por quanto tempo tenho acesso?</button>
+          <div class="faq-answer">
+            <p>Você tem acesso vitalício a todo o conteúdo do curso e às atualizações futuras. Assista quando e quantas vezes quiser, para sempre.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">Preciso comprar materiais caros para começar?</button>
+          <div class="faq-answer">
+            <p>Não. Os materiais iniciais são acessíveis e você vai aprender a aproveitar tudo sem desperdício desde a primeira aula. A especialista te guia nas compras certas.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">Consigo realmente faturar de R$500 a R$2.000 por mês?</button>
+          <div class="faq-answer">
+            <p>Sim — desde que aplique o método e dedique tempo ao seu negócio. Centenas de alunas já chegaram a esses resultados seguindo o passo a passo ensinado no curso.</p>
+          </div>
+        </div>
+        <div class="faq-item animate-on-scroll">
+          <button class="faq-question">As aulas têm prazo para assistir?</button>
+          <div class="faq-answer">
+            <p>Você assiste no seu ritmo, quantas vezes quiser. O acesso é vitalício — pode pausar, rever e avançar conforme sua disponibilidade, sem prazo.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#garantir" class="btn-cta animate-on-scroll">✅ Garantir Minha Vaga Agora</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       13. CTA FINAL
+  ============================================================ -->
+  <section class="cta-final">
+    <div class="container">
+      <h2 class="animate-on-scroll">A decisão que vai transformar<br>sua vida começa agora</h2>
+      <p class="animate-on-scroll">
+        Centenas de mulheres já deram o primeiro passo.<br>
+        Chegou a sua vez de criar, vender e faturar com o biscuit.
+      </p>
+
+      <ul class="cta-final-bullets animate-on-scroll">
+        <li>✅ Aprenda a massa de biscuit do zero</li>
+        <li>✅ Crie peças únicas que o mercado compra</li>
+        <li>✅ Venda online no seu ritmo</li>
+        <li>✅ Acesso vitalício completo</li>
+      </ul>
+
+      <div class="preco-final animate-on-scroll">12x de <strong>R$ 15,20</strong> <span style="font-size:0.85rem;font-weight:400;opacity:0.8">ou R$147 à vista</span></div>
+
+      <a href="https://pay.hotmart.com/J104716342N?off=neub9a1k&bid=1774566116708" class="btn-cta-white animate-on-scroll">🎯 Quero Começar Agora</a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       14. RODAPÉ
+  ============================================================ -->
+  <footer>
+    <div class="footer-logo">Biscuit Lucrativo</div>
+    <nav class="footer-links" aria-label="Links do rodapé">
+      <a href="#">Política de Privacidade</a>
+      <a href="#">Termos de Uso</a>
+      <a href="#">Contato</a>
+    </nav>
+    <hr class="footer-divider" />
+    <div class="footer-copy">© 2025 Biscuit Lucrativo. Todos os direitos reservados.</div>
+    <p class="footer-disclaimer">
+      Os resultados apresentados são individuais e não garantem os mesmos para todos os alunos.
+      Os depoimentos exibidos são de alunas reais e refletem suas experiências pessoais com o método.
+    </p>
+  </footer>
+
+  <!-- ============================================================
+       WHATSAPP FLUTUANTE
+  ============================================================ -->
+  <a href="https://wa.me/5500000000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale conosco no WhatsApp">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 1C7.716 1 1 7.716 1 16c0 2.628.68 5.1 1.868 7.244L1 31l7.98-2.092A14.93 14.93 0 0016 31c8.284 0 15-6.716 15-15S24.284 1 16 1z" fill="#25D366"/>
+      <path d="M23.02 19.56c-.356-.18-2.104-1.04-2.43-1.16-.325-.118-.562-.18-.8.18-.237.355-.917 1.16-1.124 1.398-.208.237-.415.267-.77.09-.357-.18-1.504-.554-2.863-1.765-1.058-.944-1.773-2.11-1.98-2.465-.207-.357-.022-.55.155-.727.16-.16.357-.415.535-.622.178-.208.237-.357.356-.594.118-.238.06-.446-.03-.625-.09-.178-.8-1.93-1.097-2.643-.288-.693-.582-.6-.8-.61l-.68-.012c-.237 0-.623.09-.95.446-.325.357-1.24 1.21-1.24 2.95 0 1.74 1.27 3.42 1.448 3.658.178.237 2.5 3.816 6.053 5.35.847.365 1.508.584 2.023.748.85.27 1.624.232 2.234.14.682-.1 2.104-.86 2.4-1.69.297-.83.297-1.543.208-1.69-.09-.148-.326-.237-.682-.416z" fill="#fff"/>
+    </svg>
+  </a>
+
+  <!-- ============================================================
+       JAVASCRIPT
+  ============================================================ -->
+  <script>
+    /* ---- INTERSECTION OBSERVER ---- */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    /* ---- CAROUSEL FACTORY ---- */
+    function initCarousel(containerSelector, autoplayMs) {
+      const container = document.querySelector(containerSelector);
+      if (!container) return;
+      const track = container.querySelector('.carousel-track');
+      const cards = Array.from(track.querySelectorAll('.carousel-card'));
+      const dotsContainer = container.querySelector('.carousel-dots');
+      const arrowsWrap = container.querySelector('.carousel-arrows');
+      let current = 0, timer;
+
+      // Build dots
+      cards.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Ir para slide ' + (i + 1));
+        d.addEventListener('click', () => { stopAuto(); goTo(i); startAuto(); });
+        dotsContainer.appendChild(d);
+      });
+
+      function getDots() { return dotsContainer.querySelectorAll('.dot'); }
+
+      function goTo(index) {
+        current = ((index % cards.length) + cards.length) % cards.length;
+        const cardRect = cards[0].getBoundingClientRect();
+        const cardWidth = (cardRect.width > 0 ? cardRect.width : cards[0].offsetWidth) + 16;
+        track.style.transform = `translateX(-${current * cardWidth}px)`;
+        getDots().forEach((d, i) => d.classList.toggle('active', i === current));
+      }
+
+      // Touch / swipe
+      let startX = 0;
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; stopAuto(); }, { passive: true });
+      track.addEventListener('touchend', e => {
+        const diff = startX - e.changedTouches[0].clientX;
+        if (Math.abs(diff) > 40) goTo(current + (diff > 0 ? 1 : -1));
+        startAuto();
+      });
+
+      // Autoplay
+      function startAuto() { timer = setInterval(() => goTo(current + 1), autoplayMs || 4000); }
+      function stopAuto() { clearInterval(timer); }
+      container.addEventListener('mouseenter', stopAuto);
+      container.addEventListener('mouseleave', startAuto);
+
+      // Arrows
+      if (arrowsWrap) {
+        arrowsWrap.querySelector('.prev')?.addEventListener('click', () => { stopAuto(); goTo(current - 1); startAuto(); });
+        arrowsWrap.querySelector('.next')?.addEventListener('click', () => { stopAuto(); goTo(current + 1); startAuto(); });
+      }
+
+      // Recalculate on resize
+      window.addEventListener('resize', () => goTo(current), { passive: true });
+
+      // Inicia após layout estar pronto
+      requestAnimationFrame(() => { goTo(0); startAuto(); });
+    }
+
+    // Init carousels
+    initCarousel('#carousel-aprender', 3500);
+    initCarousel('#carousel-provas', 4500);
+
+    /* ---- FAQ ACCORDION ---- */
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    /* ---- COUNTDOWN TIMER — 5 minutos, reinicia automaticamente ---- */
+    (function() {
+      const display = document.getElementById('countdown');
+      if (!display) return;
+      const TOTAL = 5 * 60; // 5 minutos em segundos
+      let remaining = TOTAL;
+
+      function pad(n) { return String(n).padStart(2, '0'); }
+
+      function tick() {
+        const m = Math.floor(remaining / 60);
+        const s = remaining % 60;
+        display.textContent = pad(m) + ':' + pad(s);
+        if (remaining <= 10) {
+          display.style.background = 'rgba(192,25,44,0.7)';
+        } else {
+          display.style.background = 'rgba(0,0,0,0.25)';
+        }
+        if (remaining <= 0) {
+          remaining = TOTAL; // reinicia
+        } else {
+          remaining--;
+        }
+      }
+
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+</html>
